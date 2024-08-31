@@ -24,47 +24,47 @@ This lab involves the following devices:
 
 | Vlan | Instance type | Instance name | Description |
 | - | :- | :- | :- |
-| *999* | VSI | Stark-Industries | For forwarding Layer 2 packets based on MAC addresses and VLAN tags |
-| *1000* | VPN | HF_OAM | For operations and maintenance i.e. remote access via SSH |
+| **999** | VSI | Stark-Industries | For forwarding Layer 2 packets based on MAC addresses and VLAN tags |
+| **1000** | VPN | HF_OAM | For operations and maintenance i.e. remote access via SSH |
 
 | Device name | Interface | Link type | VLAN plan | Description |
 | - | :- | :- | :- | :- |
-| *XENON-11* | Ethernet1/0/7 | - | dot1q: 999, 1000 | Link to Troas Crescent Branch |
+| **XENON-11** | Ethernet1/0/7 | - | dot1q: 999, 1000 | Link to Troas Crescent Branch |
 |  | Ethernet1/0/8 | - | dot1q: 999, 1000 | Link to Oxford Branch |
-| *SULPHUR-44* | Ethernet1/0/7 | - | dot1q: 1000 | Link to Hafnium NMS Server |
+| **SULPHUR-44** | Ethernet1/0/7 | - | dot1q: 1000 | Link to Hafnium NMS Server |
 | | Ethernet1/0/9 | - | dot1q: 999, 1000 | Link to Glover HQ |
-| *TROAS CRESCENT BRANCH* | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Xenon-11 |
+| **TROAS CRESCENT BRANCH** | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Xenon-11 |
 |  | GE0/0/23 | Access | default: 999 | Link to LAN |
-| *OXFORD BRANCH* | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Xenon-11 |
+| **OXFORD BRANCH** | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Xenon-11 |
 |  | GE0/0/23 | Access | default: 999 | Link to LAN |
-| *GLOVER HQ* | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Sulphur-44 |
+| **GLOVER HQ** | GE0/0/24 | Trunk | allow-pass: 999, 1000 | Link to Sulphur-44 |
 |  | GE0/0/23 | Access | default: 999 | Link to LAN |
-| *HAFNIUM OAM SERVER* | GE0/0/1 | - | dot1q: 1000 | Link to Sulphur-44 |
+| **HAFNIUM OAM SERVER** | GE0/0/1 | - | dot1q: 1000 | Link to Sulphur-44 |
 
 ### IP Address Plan
 
 | Device name | Interface | IP Address | Subnet Mask |
 | - | :- | :- | :- |
-| *DOMAIN CONTROLLER* | Ethernet0/0/0 | 172.31.0.1 | 12 |
-| *VM* | Ethernet0/0/1 | 172.31.100.1 | 12 |
-| *SULPHUR-44* | LoopBack0 | 10.128.51.44 | 32 |
+| **DOMAIN CONTROLLER** | Ethernet0/0/0 | 172.31.0.1 | 12 |
+| **VM** | Ethernet0/0/1 | 172.31.100.1 | 12 |
+| **SULPHUR-44** | LoopBack0 | 10.128.51.44 | 32 |
 | | Ethernet1/0/6 | 10.0.44.6 | 24 |
 | | Ethernet1/0/1.1000 | 10.201.11.50 | 30 |
 | | Ethernet1/0/9.1000 | 10.201.11.10 | 30 |
-| *TROAS CRESCENT BRANCH* | Vlanif1000 | 10.201.11.1 | 30 |
-| *OXFORD BRANCH* | Vlanif1000 | 10.201.11.5 | 30 |
-| *GLOVER HQ* | Vlanif1000 | 10.201.11.9 | 30 |
-| *HAFNIUM OAM SERVER* | LoopBack0 | 10.128.255.100 | 32 |
+| **TROAS CRESCENT BRANCH** | Vlanif1000 | 10.201.11.1 | 30 |
+| **OXFORD BRANCH** | Vlanif1000 | 10.201.11.5 | 30 |
+| **GLOVER HQ** | Vlanif1000 | 10.201.11.9 | 30 |
+| **HAFNIUM OAM SERVER** | LoopBack0 | 10.128.255.100 | 32 |
 | | GE0/0/1.1000 | 10.201.11.49 | 30 |
-| *THORIUM-33* | LoopBack0 | 10.128.51.33 | 32 |
+| **THORIUM-33** | LoopBack0 | 10.128.51.33 | 32 |
 | | Ethernet1/0/6 | 10.0.11.10 | 24 |
 | | Ethernet1/0/9 | 10.0.44.7 | 24 |
-| *XENON-11* | LoopBack0 | 10.128.51.11 | 32 |
+| **XENON-11** | LoopBack0 | 10.128.51.11 | 32 |
 | | Ethernet/0/9 | 10.0.11.9 | 24 |
 | | Ethernet1/0/7.1000 | 10.201.11.2 | 30 |
 | | Ethernet1/0/8.1000 | 10.201.11.6 | 30 |
-| *MANAGER X's PC* | Ethernet0/0/1 | 172.16.11.2 | 12 |
-| *MANAGER Y's PC* | Ethernet0/0/1 | 172.17.11.2 | 12 |
+| **MANAGER X's PC** | Ethernet0/0/1 | 172.16.11.2 | 12 |
+| **MANAGER Y's PC** | Ethernet0/0/1 | 172.17.11.2 | 12 |
 
 For loopback 0 interfaces of NEs in the backbone - 10.128.51.X/32 where X is the NE ID
 For point-to-point IPs in the backbone - 10.0.X.Y/24 where X is the NE ID of the provider edge router
